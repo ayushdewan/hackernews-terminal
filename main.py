@@ -35,7 +35,7 @@ def get_stories(mode="top", n=50, max_workers=10, start=1):
     STORIES = f"{BASE}/{mode}stories.json"
     ITEM = f"{BASE}/item/{{}}.json"
 
-    @rate_limit(10)
+    @rate_limit(15)
     def get_article_by_id(id):
         return requests.get(ITEM.format(id), timeout=10).json()
 
