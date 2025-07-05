@@ -2,6 +2,8 @@
 
 A terminal-based Hacker News reader that displays stories in a beautiful table format.
 
+![Screenshot](screenshot.png)
+
 ## Features
 
 - View top, new, best, ask, show, and job stories from Hacker News
