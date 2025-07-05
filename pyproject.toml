@@ -11,3 +11,16 @@ dependencies = [
 
 [project.scripts]
 hnd = "hn_ui.main:main"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I"]
+ignore = []

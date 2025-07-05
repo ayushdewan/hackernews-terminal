@@ -1,19 +1,19 @@
-from concurrent.futures import ThreadPoolExecutor, as_completed
-from threading import Lock
-from functools import wraps
-import requests
 import argparse
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from functools import wraps
+from threading import Lock
 
+import requests
 from rich.console import Console
-from rich.table import Table
 from rich.progress import track
+from rich.table import Table
 from rich.text import Text
 
 from .constants import (
+    DEFAULT_MAX_WORKERS,
     DEFAULT_MODE,
     DEFAULT_NUM_STORIES,
-    DEFAULT_MAX_WORKERS,
     DEFAULT_START,
     FETCH_ITEM_TEMPLATE,
     FETCH_STORIES_TEMPLATE,
@@ -123,7 +123,7 @@ def main():
         type=str,
         default=DEFAULT_MODE,
         choices=list(MODE_LIMITS.keys()),
-        help=f"Story mode to display (default: {DEFAULT_MODE}, must be one of: {', '.join(MODE_LIMITS.keys())})",
+        help=f"Story mode to display (default: {DEFAULT_MODE}, must be one of: {', '.join(MODE_LIMITS.keys())})",  # noqa: E501
     )
     parser.add_argument(
         "-s",
@@ -149,7 +149,7 @@ def main():
     num_posts = args.start + args.num - 1
     if num_posts > MODE_LIMITS[args.mode]:
         parser.error(
-            f"The sum of start and num minus 1 (index of furthest post) must not exceed {MODE_LIMITS[args.mode]}, the Hacker News API limit."
+            f"The sum of start and num minus 1 (index of furthest post) must not exceed {MODE_LIMITS[args.mode]}, the Hacker News API limit."  # noqa: E501
         )
 
     max_workers = max(num_posts, 10)
