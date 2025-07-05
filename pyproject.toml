@@ -10,4 +10,4 @@ dependencies = [
 ]
 
 [project.scripts]
-hnd = "main:main"
+hnd = "hn_ui.main:main"
