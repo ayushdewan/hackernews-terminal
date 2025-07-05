@@ -16,7 +16,7 @@ A terminal-based Hacker News reader that displays stories in a beautiful table f
 ## Installation
 
 ```bash
-pip install -e .
+pip install hn-ui
 ```
 
 ## Usage
