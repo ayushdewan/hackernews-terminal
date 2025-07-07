@@ -1,8 +1,9 @@
 # Default values for function arguments and CLI arguments
 DEFAULT_MODE = "top"
 DEFAULT_NUM_STORIES = 50
-DEFAULT_MAX_WORKERS = 10
+DEFAULT_MAX_WORKERS = 30
 DEFAULT_START = 1
+DEFAULT_RATE_LIMIT = 50  # req/s
 
 # API URLs
 BASE_API_URL = "https://hacker-news.firebaseio.com/v0"
